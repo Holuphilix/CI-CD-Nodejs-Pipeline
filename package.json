@@ -1,0 +1,16 @@
+{
+  "name": "ci-cd-nodejs-pipeline",
+  "version": "1.0.0",
+  "description": "Production-ready CI pipeline demo project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Philip Oluwaseyi Oludolamu",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  },
+  "type": "commonjs"
+}
