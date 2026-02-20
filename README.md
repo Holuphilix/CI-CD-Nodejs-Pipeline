@@ -182,7 +182,15 @@ To validate the fail-fast mechanism:
 
 This demonstrates controlled artifact gating within the pipeline.
 
-## 11. Future Improvements
+## 11. Key Design Decisions
+
+- Separated validation and artifact creation into independent jobs to enforce pipeline gating.
+- Used `needs:` to prevent artifact generation if validation fails.
+- Implemented commit-based Docker image tagging to ensure deterministic builds.
+- Applied multi-stage Docker build to prevent devDependencies from entering production images.
+- Designed fail-fast behavior to reduce wasted compute resources.
+
+## 12. Future Improvements
 
 - Push Docker image to container registry
 - Add semantic version tagging strategy
@@ -192,7 +200,7 @@ This demonstrates controlled artifact gating within the pipeline.
 - Add linting stage for code quality enforcement
 - Add manual approval gate for production promotion
 
-## 12. Key DevOps Concepts Demonstrated
+## 13. Key DevOps Concepts Demonstrated
 
 - Continuous Integration (CI)
 - Job dependency gating (`needs:`)
@@ -202,7 +210,7 @@ This demonstrates controlled artifact gating within the pipeline.
 - Environment reproducibility
 - Separation of validation and packaging stages
 
-## 13. Dual-Layer Validation Strategy
+## 14. Dual-Layer Validation Strategy
 
 This project implements validation at two independent layers:
 
@@ -224,3 +232,9 @@ If tests fail at either layer, artifact creation is blocked.
 
 This simulates production-grade artifact lifecycle enforcement.
 
+## Author
+
+**Philip Oluwaseyi Oludolamu** 
+**DevOps Engineer**  
+
+Focused on building production-grade CI/CD pipelines, infrastructure automation, and reproducible containerized workflows.
