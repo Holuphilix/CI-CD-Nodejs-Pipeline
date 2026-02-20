@@ -202,3 +202,25 @@ This demonstrates controlled artifact gating within the pipeline.
 - Environment reproducibility
 - Separation of validation and packaging stages
 
+## 13. Dual-Layer Validation Strategy
+
+This project implements validation at two independent layers:
+
+1. CI-Level Validation  
+   - Unit tests executed directly in GitHub Actions runner.
+
+2. Container-Level Validation  
+   - Unit tests executed again inside Docker test stage.
+
+Why?
+
+This ensures:
+- Code correctness
+- Environment consistency
+- Container reproducibility
+- Artifact reliability
+
+If tests fail at either layer, artifact creation is blocked.
+
+This simulates production-grade artifact lifecycle enforcement.
+
