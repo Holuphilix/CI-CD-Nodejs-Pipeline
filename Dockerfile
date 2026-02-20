@@ -12,7 +12,7 @@ FROM dependencies AS test
 COPY . .
 RUN npm test
 
-# Stage 3 — Production build
+# Stage 3 — Production image
 FROM node:18-alpine AS production
 
 WORKDIR /app
